@@ -10,9 +10,14 @@ Deadline: `21 Apr 2023 6pm`
 
 The programming language of choice is `Python 3`
 
+## Prerequisites:
+
+1. Make sure you have `python` installed. Otherwise install it [here](https://www.python.org/downloads/)
+2. The project is compatible with `MacOS`, `Linux` and `Windows`
+
 ## Getting started:
 
-1. The project can be started using main.py
+1. The project can be started using `main.py`
 
 ```
 $ python src/main.py
@@ -67,7 +72,7 @@ The application contains of five main code files and their corresponding classes
         -   Represents a statement in the statement book, can be deposit or withdraw, or possibly others
     -   `StatementBook`
         -   Represents the list of statements inside a statement book of a user
-        -   Performs actions append statements, and print the current statement list.
+        -   Performs actions such as appending statements, and print the current statement list.
 -   `main.py`
     -   Main entrypoint of the application
 
