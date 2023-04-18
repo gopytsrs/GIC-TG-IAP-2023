@@ -15,7 +15,7 @@ The programming language of choice is `Python 3`
 1. The project can be started using main.py
 
 ```
-$ python main.py
+$ python src/main.py
 ```
 
 2. The user is able to select options and perform actions as they desire. Enter any of the letters to select an option.
@@ -87,6 +87,7 @@ The application contains of five main code files and their corresponding classes
     -   Storing the state and balance of accounts between sessions
 -   Adding more unit and integration tests, require mocking for some.
 -   Refactoring of code to make it more decoupled
+-   Allow user to exit current command if they mistyped. (Current implementation is wait until command is valid and performed before exit)
 
 ## Authors:
 
