@@ -1,5 +1,10 @@
 class Logger:
     def print(output: any) -> None:
+        """Generic print for any object type with __repr__ defined
+
+        Args:
+            output (any): Object type to print
+        """
         print(output)
 
     def print_welcome() -> None:
