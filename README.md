@@ -77,7 +77,8 @@ The application contains of five main code files and their corresponding classes
     -   `CommandHandler`
         -   Exceptions are handled for cases where users enter invalid input when entering deposit/withdraw amount
     -   `BankAccount`
-        -   A custom exception `InsufficientBalanceException` is created, and it is raised when withdraw amount is more than balance
+        -   A custom exception `InsufficientBalanceException` is raised when withdraw amount is more than balance
+        -   A custom exception `InvalidAmountException` is raised when withdraw/deposit amount is less than or equal to zero
 
 ##### Possible extensions and improvements:
 
@@ -85,7 +86,7 @@ The application contains of five main code files and their corresponding classes
     -   User accounts creation and selection with username and password
     -   Storing the state and balance of accounts between sessions
 -   Adding more unit and integration tests, require mocking for some.
--   Refactoring of code to make it more decoupled (Would use functional style instead)
+-   Refactoring of code to make it more decoupled
 
 ## Authors:
 
