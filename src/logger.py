@@ -1,4 +1,7 @@
 class Logger:
+    def print(output: any) -> None:
+        print(output)
+
     def print_welcome() -> None:
         """Welcome message shown on first start
         """
@@ -49,8 +52,8 @@ class Logger:
         """
         print("Please enter a valid command [W/w], [D/d], [P/p] or [Q/q]")
 
-    def print_invalid_amount_message() -> None:
-        """Message printed when an invalid amount is entered when parsing amount to float
+    def print_invalid_input_amount_message() -> None:
+        """Message printed when an invalid amount is entered as input when parsing amount to float
         """
         print("Please enter a valid amount e.g. 100, 100.00, 100.0")
 

@@ -1,4 +1,4 @@
-from bank_account import BankAccount, InsufficientBalanceException
+from bank_account import BankAccount, InsufficientBalanceException, InvalidAmountException
 from logger import Logger
 
 
@@ -50,10 +50,12 @@ class CommandHandler:
                 amount = float(input())
                 self.account.withdraw(amount)
                 break
+            except InvalidAmountException as e:
+                Logger.print(e)
             except InsufficientBalanceException as e:
-                print(e)
+                Logger.print(e)
             except:
-                Logger.print_invalid_amount_messsage()
+                Logger.print_invalid_input_amount_message()
 
     def deposit_command(self) -> None:
         """Performs a deposit command on the bank account
@@ -64,8 +66,10 @@ class CommandHandler:
                 amount = float(input())
                 self.account.deposit(amount)
                 break
+            except InvalidAmountException as e:
+                Logger.print(e)
             except:
-                Logger.print_invalid_amount_message()
+                Logger.print_invalid_input_amount_message()
 
     def print_command(self) -> None:
         """Performs the print statements command on the bank account
