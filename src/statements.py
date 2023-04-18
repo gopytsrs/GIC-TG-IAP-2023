@@ -1,4 +1,11 @@
 import datetime
+from logger import Logger
+
+DATETIME_FORMAT = "%d %b %Y %I:%M:%S%p"
+DATETIME_WIDTH = 24
+AMOUNT_WIDTH = 18
+BALANCE_WIDTH = 18
+STATEMENTBOOK_HEADER = f"{'Date':{DATETIME_WIDTH}} | {'Amount':{AMOUNT_WIDTH}} | {'Balance':{BALANCE_WIDTH}}"
 
 
 class Statement:
@@ -6,7 +13,7 @@ class Statement:
     """
 
     def __init__(self, amount: float, balance: float, action_datetime: str) -> None:
-        self.message = f"{action_datetime:24} | {amount:18.2f} | {balance:18.2f}"
+        self.message = f"{action_datetime:{DATETIME_WIDTH}} | {amount:{AMOUNT_WIDTH}.2f} | {balance:{BALANCE_WIDTH}.2f}"
 
     def __repr__(self) -> str:
         return self.message
@@ -26,7 +33,7 @@ class StatementBook:
             str: date formatted such as "8 Jul 2022 11:14:15AM"
         """
         now = datetime.datetime.now()
-        formatted_date = now.strftime("%d %b %Y %I:%M:%S%p")
+        formatted_date = now.strftime(DATETIME_FORMAT)
         return formatted_date
 
     def add_deposit_statement(self, amount: float, balance: float) -> None:
@@ -52,6 +59,6 @@ class StatementBook:
     def print_statements(self) -> None:
         """Prints all the statements in the book in the order they were added
         """
-        print(f"{'Date':24} | {'Amount':18} | {'Balance':18}")
+        Logger.print(STATEMENTBOOK_HEADER)
         for statement in self.statements:
-            print(statement)
+            Logger.print(statement)
