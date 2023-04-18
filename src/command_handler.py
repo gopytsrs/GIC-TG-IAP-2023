@@ -74,4 +74,7 @@ class CommandHandler:
     def print_command(self) -> None:
         """Performs the print statements command on the bank account
         """
-        self.account.get_statement()
+        try:
+            self.account.get_statement()
+        except Exception as e:
+            print(e)

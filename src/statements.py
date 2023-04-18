@@ -19,6 +19,12 @@ class Statement:
         return self.message
 
 
+class EmptyStatementBookException(Exception):
+    def __init__(self):
+        self.message = "There are currently no viewable statements in the account. Please perform some actions first."
+        super().__init__(self.message)
+
+
 class StatementBook:
     """This class represents a statement book/list, you can add statements and view all statements
     """
@@ -58,7 +64,12 @@ class StatementBook:
 
     def print_statements(self) -> None:
         """Prints all the statements in the book in the order they were added
+
+        Raises:
+            EmptyStatementBookException: when there are no statements yet in the statement book
         """
+        if len(self.statements) == 0:
+            raise EmptyStatementBookException()
         Logger.print(STATEMENTBOOK_HEADER)
         for statement in self.statements:
             Logger.print(statement)

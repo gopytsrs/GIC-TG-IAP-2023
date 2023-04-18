@@ -75,10 +75,12 @@ The application contains of five main code files and their corresponding classes
 
 -   To ensure robustness of the application, exception handling is added into the code in several places
     -   `CommandHandler`
-        -   Exceptions are handled for cases where users enter invalid input when entering deposit/withdraw amount
+        -   Exceptions are handled for cases where users enter invalid input or perform the command when it is not valid
     -   `BankAccount`
         -   A custom exception `InsufficientBalanceException` is raised when withdraw amount is more than balance
-        -   A custom exception `InvalidAmountException` is raised when withdraw/deposit amount is less than or equal to zero
+        -   A custom exception `InvalidAmountException` is raised when withdraw/deposit amount is less than or equal to
+    -   `StatementBook`
+        -   A custom exception `EmptyStatementBookException` is raised when `print_statements` is called when the statement book is empty.
 
 ##### Possible extensions and improvements:
 

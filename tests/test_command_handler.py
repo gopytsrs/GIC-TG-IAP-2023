@@ -19,3 +19,11 @@ def test_invalid_command_entered(monkeypatch, capfd):
     command_handler.accept_command()
     out, _ = capfd.readouterr()
     assert out == "Please enter a valid command [W/w], [D/d], [P/p] or [Q/q]\n"
+
+
+def test_no_statements(capfd):
+    account = BankAccount()
+    command_handler = CommandHandler(account)
+    command_handler.print_command()
+    out, _ = capfd.readouterr()
+    assert out == "There are currently no viewable statements in the account. Please perform some actions first.\n"
